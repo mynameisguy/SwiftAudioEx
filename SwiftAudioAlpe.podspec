@@ -7,18 +7,18 @@
 #
 
 Pod::Spec.new do |s|
-  s.name             = 'SwiftAudioEx'
-  s.version          = '0.14.5'
+  s.name             = 'SwiftAudioAlpe'
+  s.version          = '0.14.4'
   s.summary          = 'Easy audio streaming for iOS'
   s.description      = <<-DESC
 SwiftAudioEx is an audio player written in Swift, making it simpler to work with audio playback from streams and files.
 DESC
 
   s.homepage         = 'https://github.com/DoubleSymmetry/SwiftAudioEx'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
+  s.license          = 'MIT'
   s.authors          = { 'David Chavez'     => 'david@dcvz.io',
                         'Jørgen Henrichsen' => 'jh.henrichs@gmail.com', }
-  s.source           = { :git => 'https://github.com/DoubleSymmetry/SwiftAudioEx.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/mynameisguy/SwiftAudioEx.git', :tag => s.version.to_s }
 
   s.ios.deployment_target = '11.0'
   s.swift_version = '5.0'
