@@ -345,7 +345,8 @@ extension AVPlayerWrapper: AVPlayerObserverDelegate {
     }
 
     func preload(item: AudioItem) {
-        guard let url =  URL(string: item.getSourceUrl()) else { return }
+        let urlString = item.getSourceUrl()
+        guard let url =  URL(string: urlString) else { return }
 
         let options = (item as? AssetOptionsProviding)?.getAssetOptions()
         let asset = AVURLAsset(url: url, options: options)
