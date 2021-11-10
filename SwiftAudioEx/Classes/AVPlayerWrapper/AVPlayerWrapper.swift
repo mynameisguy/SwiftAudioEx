@@ -345,11 +345,13 @@ extension AVPlayerWrapper: AVPlayerObserverDelegate {
     }
 
     func preload(item: AudioItem) {
-        let urlString = item.getSourceUrl();
-        let url =  URL(string: urlString);
+        let urlString = item.getSourceUrl()
+        guard let url = URL(string: urlString) else { return }
 
-        let asset = AVURLAsset(url:url!);
-        let keys = ["playable", "tracks", "duration"];
+        let options = (item as? AssetOptionsProviding)?.getAssetOptions()
+        let asset = AVURLAsset(url: url, options: options)
+
+        let keys = ["playable", "tracks", "duration"]
 
         asset.loadValuesAsynchronously(forKeys: keys, completionHandler: {
             var _: NSError? = nil
